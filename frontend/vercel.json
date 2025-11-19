@@ -1,12 +1,14 @@
 {
+  "version": 2,
   "builds": [
     {
-      "src": "frontend/package.json",
+      "src": "frontend/",
       "use": "@vercel/static-build",
       "config": {
-        "buildCommand": "cd frontend && yarn install --frozen-lockfile && yarn build",
-        "outputDirectory": "build",
-        "installCommand": "cd frontend && yarn install --frozen-lockfile"
+        "zeroConfig": true,
+        "installCommand": "yarn install --frozen-lockfile",
+        "buildCommand": "yarn build",
+        "outputDirectory": "frontend/build"
       }
     },
     {
